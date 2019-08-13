@@ -1,5 +1,8 @@
 class User < ApplicationRecord
 
+    has_many :favorites
+    has_many :cards, through: :favorites
+
     has_secure_password
     
     def auth_token
@@ -7,7 +10,7 @@ class User < ApplicationRecord
     end
 
     def as_json(*)
-        super.except('password_digest')
+        super.except('password')
     end
 
 end
