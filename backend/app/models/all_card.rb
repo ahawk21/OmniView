@@ -1,0 +1,3 @@
+class AllCard < ApplicationRecord
+    
+end
