@@ -64,7 +64,7 @@ body {
 	align-items: center;
 	flex-direction: column;
 	font-family: 'Montserrat', sans-serif;
-	height: 100vh;
+	/* height: 100vh; */
 }
 
 h1 {
@@ -150,6 +150,8 @@ input {
 	width: 768px;
 	max-width: 100%;
 	min-height: 480px;
+	margin-top: 200px;
+	margin-bottom: 275px;
 }
 
 .form-container {

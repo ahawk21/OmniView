@@ -19,7 +19,7 @@ export default class App extends React.Component{
         <BrowserRouter> 
           <Route exact path='/sign-in' component={SigninCard}/>
           <Route exact path='/home' component={Home}/>
-         </BrowserRouter>
+        </BrowserRouter>
 
         {/* <Signin/> */}
         
