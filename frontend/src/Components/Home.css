@@ -1,6 +1,19 @@
 body {
     font-family: "Lato", sans-serif;
+    align-items: left;
+	flex-direction: left;
   }
+
+  hr { 
+    display: block;
+    margin-before: 0.5em;
+    margin-after: 0.5em;
+    margin-start: auto;
+    margin-end: auto;
+    overflow: hidden;
+    border-style: inset;
+    border-width: 1px;
+}
   
   .sidenav {
     height: 100%;
@@ -9,14 +22,17 @@ body {
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #111;
+    background-color: rgb(255, 255, 255);
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
   }
   
   .sidenav a {
-    padding: 8px 8px 8px 32px;
+    /* padding: 5px 5px 5px 5px; */
+    margin-left: 0px;
+    margin-right: 0px;
+    /* padding-left: 1px; */
     text-decoration: none;
     font-size: 25px;
     color: #818181;
@@ -25,7 +41,7 @@ body {
   }
   
   .sidenav a:hover {
-    color: #f1f1f1;
+    color: #c9c9c9;
   }
   
   .sidenav .closebtn {
@@ -40,3 +56,42 @@ body {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
   }
+
+  i {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    position: absolute;
+    left: 50%;
+  }
+
+  i:hover {
+    color: #c9c9c9;
+  }
+  
+  .right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+  }
+  
+  .left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+  }
+  
+  .up {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+  }
+  
+  .down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+  }
+
+  canvas {
+    /* width: 100%;
+    height: 100%; */
+ }
+ 

@@ -8,8 +8,8 @@ export default class Signin extends React.Component{
 
         return(
             <div>
-                <h1>Welcome to OmniView</h1>
-                <p>A revolutionary new way to view trending data</p>
+                {/* <h1>Welcome to OmniView</h1>
+                <p>A revolutionary new way to view trending data</p> */}
             </div>
         )
     }
