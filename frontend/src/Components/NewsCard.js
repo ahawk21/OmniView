@@ -3,43 +3,57 @@ import './NewsCard.css'
 
 export default class NewsCard extends React.Component {
 
+state = {
+allNews: {}
+}
+
+componentDidMount(){
+fetch('https://newsapi.org/v2/top-headlines?sources=google-news&apiKey=690fa31d41294903a26d44c79027f795')
+.then(res => res.json())
+.then(newsData => {
+console.log(newsData)
+this.setState({
+allNews: newsData.articles
+})
+// console.log(newsData.articles[0].title)
+})
+}
+
+// {this.state.allNews.length ? this.state.allNews[0].urlToImage : " "}
+render(){
+console.log (this.state.allNews)
+return(
+<div style={{display: "flex"}}>
+<div className="content">
+<a href={this.state.allNews.length ? this.state.allNews[0].url : " "}>
+<div className="content-overlay"></div>
+<img className="content-image" src={this.state.allNews.length ? this.state.allNews[0].urlToImage : " "} alt=""/>
+<div className="content-details fadeIn-top">
+<p>{this.state.allNews.length ? this.state.allNews[0].title : " "}</p>
+</div>
+</a>
+</div>
+<div className="content">
+<a href={this.state.allNews.length ? this.state.allNews[1].url : " "}>
+<div className="content-overlay"></div>
+<img className="content-image" src={this.state.allNews.length ? this.state.allNews[1].urlToImage : " "} alt=""/>
+<div className="content-details fadeIn-top">
+<p>{this.state.allNews.length ? this.state.allNews[1].title : " "}</p>
+</div>
+</a>
+</div>
+<div className="content">
+<a href={this.state.allNews.length ? this.state.allNews[2].url : " "}>
+<div className="content-overlay"></div>
+<img className="content-image" src={this.state.allNews.length ? this.state.allNews[2].urlToImage : " "} alt=""/>
+<div className="content-details fadeIn-top">
+<p>{this.state.allNews.length ? this.state.allNews[2].title : " "}</p>
+</div>
+</a>
+</div>
 
 
-    render(){
-
-        return(
-            <div style={{display: "flex"}}>
-                <div className="content">
-                    <a href="https://www.cnn.com/2019/08/21/politics/us-economy-recession-trump/index.html" target="_blank">
-                        <div className="content-overlay"></div>
-                        <img className="content-image" src="https://cdn.cnn.com/cnnnext/dam/assets/190820172627-02-trump-0915-super-tease.jpg"/>
-                        <div className="content-details fadeIn-top">
-                            <p>Trump's attempt to outrun a recession might make things worse</p>
-                        </div>
-                    </a>
-                </div>
-                <div className="content">
-                    <a href="https://www.politico.com/story/2019/08/21/federal-scientists-opioid-crisis-1673694" target="_blank">
-                        <div className="content-overlay"></div>
-                        <img className="content-image" src="https://static.politico.com/ab/60/54c9b7324c6a947bb88387399990/190819-opioids-ap-773.jpg"/>
-                        <div className="content-details fadeIn-top">
-                            <p>Federal scientists warned of coming opioid crisis in 2006</p>
-                        </div>
-                    </a>
-                </div>
-                <div className="content">
-                    <a href="https://thehill.com/homenews/campaign/458161-polls-suggest-sanders-may-be-underestimated" target="_blank">
-                        <div className="content-overlay"></div>
-                        <img className="content-image" src="https://thehill.com/sites/default/files/sandersbernie_081919getty_lead.jpg"/>
-                        <div className="content-details fadeIn-top">
-                            <p>Polls suggest Sanders may be underestimated | TheHill</p>
-                        </div>
-                    </a>
-                </div>
-
-                 
-
-            </div>
-        )
-    }
+</div>
+)
+}
 }
