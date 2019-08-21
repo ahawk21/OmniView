@@ -1,7 +1,9 @@
 import React from "react";
 import * as THREE from "three";
 import './Home.css';
-import Card from "./Card.js"
+import NewsCard from "./NewsCard.js"
+import PhotosCard from "./PhotosCard.js"
+import VideosCard from "./VideosCard.js"
 
 
 
@@ -19,17 +21,20 @@ export default class Home extends React.Component {
         var scene = new THREE.Scene();
         var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 );
         var renderer = new THREE.WebGLRenderer();
+        camera.position.z = 5;
         renderer.setSize( window.innerWidth, window.innerHeight );
         document.body.appendChild( renderer.domElement );
-        var geometry = new THREE.BoxGeometry( 1, 1, 1 );
-        var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
-        var cube = new THREE.Mesh( geometry, material );
-        scene.add( cube );
-        camera.position.z = 5;
+
+        var geometry = new THREE.SphereGeometry( 1, 35, 35 );
+        var material = new THREE.MeshBasicMaterial( {color: 0x00BFFF} );
+        var sphere = new THREE.Mesh( geometry, material );
+        scene.add( sphere );
+
         var animate = function () {
           requestAnimationFrame( animate );
-          cube.rotation.x += 0.01;
-          cube.rotation.y += 0.01;
+          sphere.rotation.x += 0.5;
+          sphere.rotation.y += 0.5;
+          sphere.rotation.z += 0.5;
           renderer.render( scene, camera );
         };
         animate();
@@ -45,7 +50,7 @@ export default class Home extends React.Component {
         return(
             <div> 
                 <header>
-                    <style>{''}</style>
+                   
                 </header>
                 <body style={{alignItems: "", flexDirection: "left"}}>
 
@@ -54,10 +59,11 @@ export default class Home extends React.Component {
                     
 
                     <div id="mySidenav" className="sidenav">
-                        <h1 style={{color: '#818181'}}>"COUNTRY"</h1>
+                        <h1 style={{color: '#818181'}}>United States</h1>
                         <a class="closebtn" style={{cursor: 'pointer'}} onClick={this.closeNav}>&times;</a>
                             <hr></hr>
-                                <h1 style={{color: '#818181'}}>"PICTURE"</h1>
+                                {/* <h1 style={{color: '#818181'}}>"PICTURE"</h1> */}
+                                <img style={{width: "600px", height: "300px"}} src="https://i.pinimg.com/originals/2b/0d/0d/2b0d0d2f6c011e199aa58549223907a6.jpg"/>
                             <hr></hr>
                                 <button style={{width: '25%', textAlign: 'left'}}>News</button>
                                 <button style={{width: '25%', textAlign: 'left'}}>Photos</button>
@@ -65,17 +71,17 @@ export default class Home extends React.Component {
                                 <button style={{width: '25%', textAlign: 'left'}}>Favorites</button>
                             <hr></hr>
                         <a href="#"><strong>News</strong></a>
-                            <i class="arrow right"></i>
-                                <Card/>
-                            <i class="arrow left"></i>
+                            {/* <i class="arrow right"></i> */}
+                                <NewsCard/>
+                            {/* <i class="arrow left"></i> */}
                         <a href="#"><strong>Photos</strong></a>
-                            <i class="arrow right"></i>
-                                <Card/>
-                            <i class="arrow left"></i>
+                            {/* <i class="arrow right"></i> */}
+                                <PhotosCard/>
+                            {/* <i class="arrow left"></i> */}
                         <a href="#"><strong>Video</strong></a>
-                            <i class="arrow right"></i>
-                                <Card/>
-                            <i class="arrow left"></i>
+                            {/* <i class="arrow right"></i> */}
+                                <VideosCard/>
+                            {/* <i class="arrow left"></i> */}
                     </div>
 
                     <span style={{fontSize: '30px', cursor: 'pointer', height: '1px', color: 'white', zIndex: 10}} onClick={this.openNav}>&#9776;</span>                

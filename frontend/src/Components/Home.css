@@ -25,18 +25,22 @@ body {
     background-color: rgb(255, 255, 255);
     overflow-x: hidden;
     transition: 0.5s;
-    padding-top: 60px;
+    padding-top: 10px;
   }
   
   .sidenav a {
     /* padding: 5px 5px 5px 5px; */
+    padding-bottom: 5px;
+    overflow-x: hidden;
     margin-left: 0px;
-    margin-right: 0px;
+    margin-right: 0px; 
+    margin: 1px;
+    padding-top: 10px;
     /* padding-left: 1px; */
     text-decoration: none;
     font-size: 25px;
     color: #818181;
-    display: block;
+    display: flex;
     transition: 0.3s;
   }
   
