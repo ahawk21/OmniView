@@ -4,6 +4,7 @@ import './Home.css';
 import NewsCard from "./NewsCard.js"
 import PhotosCard from "./PhotosCard.js"
 import VideosCard from "./VideosCard.js"
+import { Link } from 'react-router-dom'
 
 
 
@@ -24,20 +25,34 @@ export default class Home extends React.Component {
         camera.position.z = 5;
         renderer.setSize( window.innerWidth, window.innerHeight );
         document.body.appendChild( renderer.domElement );
-
-        var geometry = new THREE.SphereGeometry( 1, 35, 35 );
-        var material = new THREE.MeshBasicMaterial( {color: 0x00BFFF} );
+        
+        var geometry  = new THREE.SphereGeometry( 70, 20, 20)
+        var material  = new THREE.MeshBasicMaterial()
+        material.map   = THREE.ImageUtils.loadTexture('stars.png')
+        material.side  = THREE.BackSide
+        var mesh  = new THREE.Mesh(geometry, material)
+        
+        var geometry = new THREE.SphereGeometry( 2, 35, 35 );
+        var material = new THREE.MeshBasicMaterial( );
+        material.map = THREE.ImageUtils.loadTexture('black.png')
+        // material.bumpMap = THREE.ImageUtils.loadTexture('earthbump1k.jpg')
+        // material.bumpScale = 0.05
+        // material.specularMap  = THREE.ImageUtils.loadTexture('black.png')
+        // material.specular = new THREE.Color('grey')
+   
         var sphere = new THREE.Mesh( geometry, material );
-        scene.add( sphere );
-
+        scene.add( sphere, mesh );
+        
         var animate = function () {
           requestAnimationFrame( animate );
-          sphere.rotation.x += 0.5;
-          sphere.rotation.y += 0.5;
-          sphere.rotation.z += 0.5;
-          renderer.render( scene, camera );
+        //   sphere.rotation.x += 0.01;
+          sphere.rotation.y += 0.01;
+        // earthMesh.rotation.y += (1 / 32 * delta) / 1000;
+        renderer.render( scene, camera );
         };
         animate();
+
+
     
 
     }
@@ -70,7 +85,7 @@ export default class Home extends React.Component {
                                 <button style={{width: '25%', textAlign: 'left'}}>Video</button>
                                 <button style={{width: '25%', textAlign: 'left'}}>Favorites</button>
                             <hr></hr>
-                        <a href="#"><strong>News</strong></a>
+                        <Link to={'/news'}><strong>News</strong></Link>
                                 <NewsCard/>
                         <a href="#"><strong>Photos</strong></a>
                                 <PhotosCard/>

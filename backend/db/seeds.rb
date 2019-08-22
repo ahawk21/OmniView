@@ -12,5 +12,5 @@ Card.destroy_all
 
 
 User.create(username: "test", password: "12345")
-Card.create(category: "News", title: "Test Title", preview_img: "https://image.cnbcfm.com/api/v1/image/106076974-1565721632544gettyimages-1160676089.jpeg?v=1565723219", link: "https://www.cnbc.com/2019/08/13/warden-of-jail-where-jeffrey-epstein-killed-himself-reassigned.html")
-Favorite.create(user_id: "1", card_id: "1")
+# Card.create(category: "News", title: "Test Title", preview_img: "https://image.cnbcfm.com/api/v1/image/106076974-1565721632544gettyimages-1160676089.jpeg?v=1565723219", link: "https://www.cnbc.com/2019/08/13/warden-of-jail-where-jeffrey-epstein-killed-himself-reassigned.html")
+# Favorite.create(user_id: "1", card_id: "1")

@@ -10,7 +10,7 @@ class User < ApplicationRecord
     end
 
     def as_json(*)
-        super.except('password')
+        super.except('password_digest')
     end
 
 end

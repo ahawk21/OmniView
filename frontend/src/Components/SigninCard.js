@@ -14,12 +14,11 @@ export default class SigninCard extends React.Component{
     
     handleChange = e => {
         this.setState({
-            [e.target.text]: e.target.value,
-            [e.target.password]: e.target.value
+            [e.target.name]: e.target.value
         })
     }
     
-    handleSubmit = (e) => {
+    handleLogin = (e) => { 
         e.preventDefault()
         fetch('http://localhost:3000/login',{
             method: 'POST',
@@ -40,10 +39,34 @@ export default class SigninCard extends React.Component{
             else{
                 localStorage.setItem('token',user.auth_token)
                 localStorage.setItem('user',user.id)
-                this.props.history.push('/browse')
+                this.props.history.push('/home')
             }
+        }) 
+    }
+
+    handleSignUp = (e) => {
+        e.preventDefault()
+        fetch('http://localhost:3000/signup',{
+          method: 'POST',
+          headers:{
+            'Content-Type':'application/json'
+          },
+          body:JSON.stringify({
+            username: this.state.username,
+            password: this.state.password
+          })
+        }).then(user => {
+          console.log(user)
+          if(this.state.username === '' || this.state.password === '' ){
+            alert('Please input values for username or password')
+          }
+          else if(user.statusText === "Internal Server Error"){
+            alert('Username already taken. Please select another.')
+          }
+          else{
+            this.props.history.push('/sign-in')
+          }
         })
-        
     }
 
     componentDidMount(){
@@ -64,20 +87,20 @@ export default class SigninCard extends React.Component{
             
             <div className="container" id="container">
                 <div className="form-container sign-up-container">
-                    <form action="#" onSubmit={this.handleSubmit}>
+                    <form onSubmit={this.handleSignUp}>
                         <h1>Create Account</h1>
-                        <input type="text" placeholder="Username" />
-                        <input type="password" placeholder="Password" />
-                        <button onClick={this.handleToggle}>Sign Up</button>
+                        <input name="username" onChange={this.handleChange} placeholder="Username" />
+                        <input name="password" onChange={this.handleChange} placeholder="Password" />
+                        <button onClick={(e) => this.handleSignUp(e)}>Sign Up</button>
                     </form>
                 </div>
                 <div className="form-container sign-in-container">
-                    <form action="#" onSubmit={this.handleSubmit}>
+                    <form onSubmit={this.handleLogin}>
                         <h1>Sign in</h1>
-                        <input type="text" placeholder="Username" />
-                        <input type="password" placeholder="Password" />
+                        <input name="username" onChange={this.handleChange} placeholder="Username" />
+                        <input name="password" onChange={this.handleChange} placeholder="Password" />
                         <br/>
-                        <button onClick={this.handleToggle}>Sign In</button>
+                        <button onClick={(e) => this.handleLogin(e)}>Sign In</button>
                     </form>
                 </div>
                 <div className="overlay-container">

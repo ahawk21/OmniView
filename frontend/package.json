@@ -9,6 +9,7 @@
     "react-browser-router": "^2.1.2",
     "react-card-flip": "^0.8.1",
     "react-dom": "^16.8.6",
+    "react-double-marquee": "^0.3.4",
     "react-particles-js": "^2.7.0",
     "react-router": "^5.0.1",
     "react-router-dom": "^5.0.1",
