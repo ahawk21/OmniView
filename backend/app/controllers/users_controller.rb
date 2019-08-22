@@ -1,6 +1,6 @@
-class UserController < ApplicationController 
+class UsersController < ApplicationController 
 
-    skip_before_action :define_current_user, only: [ :authenticate, :create, :index]
+    skip_before_action :define_current_user, only: [ :authenticate, :create]
 
     def create
         user = User.create(user_params)
