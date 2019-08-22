@@ -63,7 +63,7 @@ export default class Home extends React.Component {
                         <a class="closebtn" style={{cursor: 'pointer'}} onClick={this.closeNav}>&times;</a>
                             <hr></hr>
                                 {/* <h1 style={{color: '#818181'}}>"PICTURE"</h1> */}
-                                <img style={{width: "600px", height: "300px"}} src="https://i.pinimg.com/originals/2b/0d/0d/2b0d0d2f6c011e199aa58549223907a6.jpg"/>
+                                <img style={{width: "600px", height: "300px"}} src="https://i.pinimg.com/originals/2b/0d/0d/2b0d0d2f6c011e199aa58549223907a6.jpg" alt=""/>
                             <hr></hr>
                                 <button style={{width: '25%', textAlign: 'left'}}>News</button>
                                 <button style={{width: '25%', textAlign: 'left'}}>Photos</button>
@@ -71,17 +71,11 @@ export default class Home extends React.Component {
                                 <button style={{width: '25%', textAlign: 'left'}}>Favorites</button>
                             <hr></hr>
                         <a href="#"><strong>News</strong></a>
-                            {/* <i class="arrow right"></i> */}
                                 <NewsCard/>
-                            {/* <i class="arrow left"></i> */}
                         <a href="#"><strong>Photos</strong></a>
-                            {/* <i class="arrow right"></i> */}
                                 <PhotosCard/>
-                            {/* <i class="arrow left"></i> */}
                         <a href="#"><strong>Video</strong></a>
-                            {/* <i class="arrow right"></i> */}
                                 <VideosCard/>
-                            {/* <i class="arrow left"></i> */}
                     </div>
 
                     <span style={{fontSize: '30px', cursor: 'pointer', height: '1px', color: 'white', zIndex: 10}} onClick={this.openNav}>&#9776;</span>                
