@@ -29,14 +29,13 @@ export default class NewsCard extends React.Component {
                     <div className="content-overlay"></div>
                         <img className="content-image" src={this.state.allNews.length ? this.state.allNews[0].urlToImage : " "} alt=""/>
                     <div className="content-details fadeIn-top">
-                    {/*  */}
                     <p>
                         {this.state.allNews.length ? this.state.allNews[0].title : " "}
                     </p>
                 </div>
                 </a>
-                </div>
-                    <div className="content">
+            </div>
+                <div className="content">
                     <a href={this.state.allNews.length ? this.state.allNews[1].url : " "}>
                     <div className="content-overlay"></div>
                         <img className="content-image" src={this.state.allNews.length ? this.state.allNews[1].urlToImage : " "} alt=""/>
@@ -44,8 +43,8 @@ export default class NewsCard extends React.Component {
                     <p>{this.state.allNews.length ? this.state.allNews[1].title : " "}</p>
                 </div>
                 </a>
-                </div>
-                    <div className="content">
+            </div>
+                <div className="content">
                     <a href={this.state.allNews.length ? this.state.allNews[2].url : " "}>
                     <div className="content-overlay"></div>
                         <img className="content-image" src={this.state.allNews.length ? this.state.allNews[2].urlToImage : " "} alt=""/>

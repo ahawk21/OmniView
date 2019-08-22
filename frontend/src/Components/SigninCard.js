@@ -84,7 +84,7 @@ export default class SigninCard extends React.Component{
     render(){
         
         return(
-            
+        <body style={{justifyContent: "center", alignItems: "center", backgroundColor: "transparent"}}>
             <div className="container" id="container">
                 <div className="form-container sign-up-container">
                     <form onSubmit={this.handleSignUp}>
@@ -118,6 +118,7 @@ export default class SigninCard extends React.Component{
                     </div>
                 </div>
             </div>
+        </body>
         )
     }
 }
