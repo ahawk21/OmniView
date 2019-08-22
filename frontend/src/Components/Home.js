@@ -43,17 +43,17 @@ export default class Home extends React.Component {
         var sphere = new THREE.Mesh( geometry, material );
         scene.add( sphere, mesh );
         
+        var lastMove = [window.innerWidth/2, window.innerHeight/2];
+
+
         var animate = function () {
           requestAnimationFrame( animate );
         //   sphere.rotation.x += 0.01;
           sphere.rotation.y += 0.01;
-        // earthMesh.rotation.y += (1 / 32 * delta) / 1000;
         renderer.render( scene, camera );
         };
+        
         animate();
-
-
-    
 
     }
 
@@ -76,15 +76,15 @@ export default class Home extends React.Component {
                     <div id="mySidenav" className="sidenav">
                         <h1 style={{color: '#818181'}}>United States</h1>
                         <a class="closebtn" style={{cursor: 'pointer'}} onClick={this.closeNav}>&times;</a>
-                            <hr></hr>
+                            {/* <hr></hr> */}
                                 {/* <h1 style={{color: '#818181'}}>"PICTURE"</h1> */}
                                 <img style={{width: "600px", height: "300px"}} src="https://i.pinimg.com/originals/2b/0d/0d/2b0d0d2f6c011e199aa58549223907a6.jpg" alt=""/>
-                            <hr></hr>
+                            {/* <hr></hr> */}
                                 <button style={{width: '25%', textAlign: 'left'}}>News</button>
                                 <button style={{width: '25%', textAlign: 'left'}}>Photos</button>
                                 <button style={{width: '25%', textAlign: 'left'}}>Video</button>
                                 <button style={{width: '25%', textAlign: 'left'}}>Favorites</button>
-                            <hr></hr>
+                            {/* <hr></hr> */}
                         <Link to={'/news'}><strong>News</strong></Link>
                                 <NewsCard/>
                         <a href="#"><strong>Photos</strong></a>
@@ -93,7 +93,7 @@ export default class Home extends React.Component {
                                 <VideosCard/>
                     </div>
 
-                    <span style={{fontSize: '30px', cursor: 'pointer', height: '1px', color: 'white', zIndex: 10}} onClick={this.openNav}>&#9776;</span>                
+                    <span style={{fontSize: '30px', cursor: 'pointer', height: '1px', color: 'white', zIndex: 1}} onClick={this.openNav}>&#9776;</span>                
                 </body>
             </div>
         )
