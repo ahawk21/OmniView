@@ -84,7 +84,7 @@ export default class SigninCard extends React.Component{
     render(){
         
         return(
-        <body style={{justifyContent: "center", alignItems: "center", backgroundColor: "transparent"}}>
+        <body style={{justifyContent: "center", alignItems: "center", backgroundColor: "transparent", fontFamily: "Montserrat, sans-serif", fontSize: "20px"}}>
             <div className="container" id="container">
                 <div className="form-container sign-up-container">
                     <form onSubmit={this.handleSignUp}>
