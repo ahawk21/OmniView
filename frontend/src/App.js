@@ -7,6 +7,7 @@ import SigninCard from './Components/SigninCard'
 import { Route } from 'react-router'
 // import Particles from 'react-particles-js';
 
+// SIGNIN MAKES HOME NORMAL
 
 export default class App extends React.Component{
 
@@ -21,7 +22,6 @@ export default class App extends React.Component{
           <Route exact path='/home' component={Home}/>
         </BrowserRouter>
 
-        {/* <Signin/> */}
         
 
       </div>
