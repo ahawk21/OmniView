@@ -84,13 +84,13 @@ export default class SigninCard extends React.Component{
     render(){
         
         return(
-        <body style={{justifyContent: "center", alignItems: "center", backgroundColor: "transparent"}}>
+        <body style={{justifyContent: "center", alignItems: "center", backgroundColor: "transparent", fontFamily: "Montserrat, sans-serif", fontSize: "20px"}}>
             <div className="container" id="container">
                 <div className="form-container sign-up-container">
                     <form onSubmit={this.handleSignUp}>
                         <h1>Create Account</h1>
                         <input name="username" onChange={this.handleChange} placeholder="Username" />
-                        <input name="password" onChange={this.handleChange} placeholder="Password" />
+                        <input name="password" type="password" onChange={this.handleChange} placeholder="Password" />
                         <button onClick={(e) => this.handleSignUp(e)}>Sign Up</button>
                     </form>
                 </div>
@@ -98,7 +98,7 @@ export default class SigninCard extends React.Component{
                     <form onSubmit={this.handleLogin}>
                         <h1>Sign in</h1>
                         <input name="username" onChange={this.handleChange} placeholder="Username" />
-                        <input name="password" onChange={this.handleChange} placeholder="Password" />
+                        <input name="password" type="password" onChange={this.handleChange} placeholder="Password" />
                         <br/>
                         <button onClick={(e) => this.handleLogin(e)}>Sign In</button>
                     </form>
