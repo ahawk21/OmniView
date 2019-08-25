@@ -66,11 +66,6 @@ export default class Home extends React.Component {
                    
                 </header>
                 <body style={{alignItems: "", flexDirection: "left"}}>
-
-                    {/* align-items: center;
-	                flex-direction: column */}
-                    
-
                     <div id="mySidenav" className="sidenav">
                         <h1 style={{color: '#818181'}}>United States</h1>
                         <a class="closebtn" style={{cursor: 'pointer'}} onClick={this.closeNav}>&times;</a>
@@ -91,7 +86,8 @@ export default class Home extends React.Component {
                                 <VideosCard/>
                     </div>
 
-                    <span style={{fontSize: '30px', cursor: 'pointer', height: '1px', color: 'white', zIndex: 1}} onClick={this.openNav}>&#9776;</span>                
+                    <span style={{fontSize: '30px', cursor: 'pointer', height: '1px', color: 'white', zIndex: 1}} onClick={this.openNav}>&#9776;</span>
+                    <span style={{fontSize: '30px', cursor: 'pointer', height: '1px', zIndex: 1, marginLeft: '97%'}}><Link to={'/sign-in'}><img src="logout.png" alt="" height="42" width="42"/></Link></span>
                 </body>
             </div>
         )
