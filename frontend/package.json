@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "particles.js": "^2.0.0",
     "react": "^16.8.6",
     "react-browser-router": "^2.1.2",
